@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <Properties>
+        <Property name="log.file.biz">logs/benchmark-http.log</Property>
+        <Property name="log.file.err">logs/benchmark-http-error.log</Property>
+    </Properties>
+    <Appenders>
+        <!-- 定义控制台输出 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p %t %c{1} - %m%n" />
+        </Console>
+        <!-- 普通日志输出 -->
+        <RollingRandomAccessFile name="Biz" fileName="${log.file.biz}" filePattern="${log.file.biz}.%i">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p %t %c{1} - %m%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1GB" />
+            </Policies>
+        </RollingRandomAccessFile>
+        <!-- 异常日志输出 -->
+        <RollingRandomAccessFile name="Err" fileName="${log.file.err}" filePattern="${log.file.err}.%i">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p %t %c{1} - %m%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1GB" />
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="Biz" />
+            <AppenderRef ref="Err" />
+        </Root>
+        <Logger name="com.mamba.benchmark" level="INFO" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="Biz" />
+            <AppenderRef ref="Err" />
+        </Logger>
+    </Loggers>
+</Configuration>

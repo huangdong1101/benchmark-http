@@ -1,0 +1,18 @@
+{
+  "method": "POST",
+  "url": "http://0.0.0.0:8001/testpost",
+  "contentType": "image/jpeg",
+  "body": "/work/data/file.jpg",
+  "headers": [
+    {
+      "name": "header1",
+      "value": "h123"
+    }
+  ],
+  "cookies": [
+    {
+      "name": "cookie1",
+      "value": "c123"
+    }
+  ]
+}

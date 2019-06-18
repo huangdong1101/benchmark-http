@@ -1,0 +1,28 @@
+{
+  "method": "POST",
+  "url": "http://0.0.0.0:8001/testpost",
+  "contentType": "multipart/form-data",
+  "body": [
+    {
+      "name": "body1",
+      "text": "b123",
+      "contentType": "application/json"
+    },
+    {
+      "name": "body2",
+      "file": "/work/data/file.txt"
+    }
+  ],
+  "headers": [
+    {
+      "name": "header1",
+      "value": "h123"
+    }
+  ],
+  "cookies": [
+    {
+      "name": "cookie1",
+      "value": "c123"
+    }
+  ]
+}

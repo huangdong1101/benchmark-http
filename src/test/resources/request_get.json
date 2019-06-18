@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://0.0.0.0:8001/testget",
+  "headers": [
+    {
+      "name": "header1",
+      "value": "h123"
+    }
+  ],
+  "cookies": [
+    {
+      "name": "cookie1",
+      "value": "c123"
+    }
+  ]
+}

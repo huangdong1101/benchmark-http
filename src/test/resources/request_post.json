@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "url": "http://0.0.0.0:8001/testpost",
+  "contentType": "application/json",
+  "body": {
+    "test": 1
+  },
+  "headers": [
+    {
+      "name": "header1",
+      "value": "h123"
+    }
+  ],
+  "cookies": [
+    {
+      "name": "cookie1",
+      "value": "c123"
+    }
+  ]
+}
